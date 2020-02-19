@@ -9,6 +9,8 @@ const origin = new Date(Date.UTC(2018, 10, 8, 14, 30, 00));
 var curSe;
 var chSe;
 
+var delay = 0;
+
 const monthNames = [
   "January",
   "February",
@@ -42,9 +44,6 @@ function init() {
 
   UpdateCount();
 
-  SetDate(curDateText, curDate);
-  SetDate(fDateText, fDate);
-
   var seGone = Math.floor(
     Math.abs((curDate - origin) / (7 * 24 * 60 * 60 * 1000))
   );
@@ -55,6 +54,8 @@ function init() {
   fDate = new Date(origin);
   fDate.setDate(fDate.getDate() + (seGone + 1) * 7);
 
+  SetDate(curDateText, curDate);
+  SetDate(fDateText, fDate);
   chSeText.innerHTML = chSe;
   curSeText.innerHTML = curSe;
 }
@@ -80,7 +81,15 @@ function UpdateCount() {
     var minutes = Math.floor((chDate % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((chDate % (1000 * 60)) / 1000);
 
-    chDateText.innerHTML =
-      days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-  }, 1000);
+    if (days < 1 && hours < 1) {
+      delay = 1000;
+      chDateText.innerHTML = minutes + "m " + seconds + "s";
+    } else if (days < 1) {
+      delay = 60000;
+      chDateText.innerHTML = hours + "h " + minutes + "m ";
+    } else {
+      delay = 60000;
+      chDateText.innerHTML = days + "d " + hours + "h ";
+    }
+  }, delay);
 }
