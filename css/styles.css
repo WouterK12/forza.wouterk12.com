@@ -1,3 +1,4 @@
-#curDate {
+.date,
+.season {
   text-transform: uppercase;
 }
