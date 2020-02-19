@@ -1,3 +1,13 @@
+html {
+  font-family: "Open Sans", sans-serif;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 .wrapper,
 section {
   display: flex;
@@ -10,11 +20,17 @@ section {
 section {
   border-radius: 15px;
 }
+section:last-child {
+  margin-top: 10vh;
+}
 section div:first-child {
   font-size: 30px;
+  border-bottom: 2px solid black;
 }
 .change {
+  font-family: "Open Sans", sans-serif;
   font-size: 50px;
+  color: #fff;
 
   padding-left: 10px;
   padding-right: 10px;
@@ -22,8 +38,17 @@ section div:first-child {
 
   border-radius: 15px;
   border: 5px solid black;
+
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), #000);
 }
 .date,
 .season {
   text-transform: uppercase;
+}
+.season {
+  font-family: "Raleway", sans-serif;
+  font-size: 30px;
+}
+.season.cur {
+  margin-top: 15px;
 }

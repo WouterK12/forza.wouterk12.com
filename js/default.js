@@ -72,7 +72,7 @@ function SetDate(text, date) {
 }
 
 function UpdateCount() {
-  var x = setInterval(function() {
+  setTimeout(function() {
     curDate = new Date();
     chDate = fDate - curDate;
 
@@ -91,5 +91,6 @@ function UpdateCount() {
       delay = 60000;
       chDateText.innerHTML = days + "d " + hours + "h ";
     }
+    UpdateCount();
   }, delay);
 }
