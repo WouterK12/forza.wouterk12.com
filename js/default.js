@@ -83,13 +83,19 @@ function UpdateCount() {
 
     if (days < 1 && hours < 1) {
       delay = 1000;
-      chDateText.innerHTML = minutes + "m " + seconds + "s";
+      chDateText.innerHTML = minutes + "m " + seconds + "s ";
     } else if (days < 1) {
       delay = 60000;
       chDateText.innerHTML = hours + "h " + minutes + "m ";
+      if (minutes == 0) {
+        chDateText.innerHTML = hours + "h ";
+      }
     } else {
       delay = 60000;
       chDateText.innerHTML = days + "d " + hours + "h ";
+      if (hours == 0) {
+        chDateText.innerHTML = days + "d ";
+      }
     }
     UpdateCount();
   }, delay);

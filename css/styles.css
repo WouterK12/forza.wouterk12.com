@@ -20,8 +20,11 @@ section {
 section {
   border-radius: 15px;
 }
-section:last-child {
+section.marg {
   margin-top: 10vh;
+}
+section.marg.s {
+  margin-top: 5vh;
 }
 section div:first-child {
   font-size: 30px;
