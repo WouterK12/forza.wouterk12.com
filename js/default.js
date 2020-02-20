@@ -95,10 +95,15 @@ function UpdateCount() {
     }
 
     if (days < 1 && hours < 1 && minutes < 1 && seconds < 1) {
+      delay = 60000;
       UpdateSeason();
     }
 
     if (days < 1 && hours < 1) {
+      if (minutes < 1) {
+        delay = 1000;
+        chDateText.innerHTML = seconds + "s ";
+      }
       delay = 1000;
       chDateText.innerHTML = minutes + "m " + seconds + "s ";
     } else if (days < 1) {

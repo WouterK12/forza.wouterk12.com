@@ -5,6 +5,24 @@ a {
   color: #000;
   text-decoration: none;
 }
+body {
+  transition: background 0.2s;
+}
+body.dark {
+  color: #fff;
+  background: #000;
+}
+body.dark a {
+  color: #fff;
+}
+body.dark section div:first-child {
+  border-bottom: 2px solid white;
+}
+body.dark .change {
+  border: 5px solid white;
+
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), #000);
+}
 a:hover {
   text-decoration: underline;
 }
