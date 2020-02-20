@@ -43,7 +43,21 @@ function init() {
   curSeText = document.getElementById("curSe");
 
   UpdateCount();
+  UpdateSeason();
+}
 
+function SetDate(text, date) {
+  text.innerHTML =
+    dayNames[date.getDay() - 1] +
+    ", " +
+    date.getDate() +
+    " " +
+    monthNames[date.getMonth()] +
+    " " +
+    date.getFullYear();
+}
+
+function UpdateSeason() {
   var seGone = Math.floor(
     Math.abs((curDate - origin) / (7 * 24 * 60 * 60 * 1000))
   );
@@ -60,17 +74,6 @@ function init() {
   curSeText.innerHTML = curSe;
 }
 
-function SetDate(text, date) {
-  text.innerHTML =
-    dayNames[date.getDay() - 1] +
-    ", " +
-    date.getDate() +
-    " " +
-    monthNames[date.getMonth()] +
-    " " +
-    date.getFullYear();
-}
-
 function UpdateCount() {
   setTimeout(function() {
     curDate = new Date();
@@ -80,6 +83,17 @@ function UpdateCount() {
     var hours = Math.floor((chDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((chDate % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((chDate % (1000 * 60)) / 1000);
+
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+
+    if (days < 1 && hours < 1 && minutes < 1 && seconds < 1) {
+      UpdateSeason();
+    }
 
     if (days < 1 && hours < 1) {
       delay = 1000;
