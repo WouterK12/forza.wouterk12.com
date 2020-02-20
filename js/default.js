@@ -1,4 +1,7 @@
-window.onload = init;
+window.onload = function() {
+  this.init();
+  this.initDark();
+};
 
 var curDate = new Date();
 var fDate = new Date();
