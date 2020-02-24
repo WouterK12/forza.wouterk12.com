@@ -1,6 +1,7 @@
 window.onload = function() {
   this.init();
   this.initDark();
+  this.initLive();
 };
 
 var curDate = new Date();

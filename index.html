@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/styles.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway&display=swap"
+      href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Raleway&display=swap"
       rel="stylesheet"
     />
     <title>Forza season change</title>
@@ -23,6 +23,24 @@
       </div>
     </div>
     <div class="wrapper">
+      <div class="live">
+        <div class="logo">
+          <img src="/images/live.svg" alt="LIVE" />
+        </div>
+        <div class="info">
+          <div class="title">
+            <span>#FORZATHON</span>
+            <span class="c"><i>LIVE</i></span>
+          </div>
+          <div class="stat">
+            <span>Event begins in</span>
+            <span class="c" id="live">00:00</span>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
       <div class="title">
         When will the season in
         <a
@@ -35,7 +53,7 @@
 
       <section>
         <div>season changes in:</div>
-        <div class="change" id="chDate">00 00 00 00</div>
+        <div class="change" id="chDate">00 00</div>
         <div class="season" id="chSe"></div>
         <div class="date" id="fDate"></div>
       </section>
@@ -53,5 +71,6 @@
     </div>
   </body>
   <script src="/js/default.js"></script>
+  <script src="/js/live.js"></script>
   <script src="/js/dark.js"></script>
 </html>
