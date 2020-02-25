@@ -1,16 +1,16 @@
-var egg = "38384040373937396665";
+var time = "38384040373937396665";
 var temp = "";
 
-function initEgg() {
+function initTime() {
   document.querySelector("body").addEventListener("keydown", Checker);
 }
 
 function Checker(event) {
   var x = event.keyCode;
   temp = temp + x.toString();
-  if (!egg.startsWith(temp)) {
+  if (!time.startsWith(temp)) {
     temp = "";
-  } else if (egg == temp) {
+  } else if (time == temp) {
     temp = "";
     turn.play();
   }

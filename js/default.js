@@ -3,7 +3,7 @@ window.onload = function() {
   this.initDark();
   this.initLive();
   this.initAudio();
-  this.initEgg();
+  this.initTime();
 };
 
 var curDate = new Date();
