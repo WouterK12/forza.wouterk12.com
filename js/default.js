@@ -2,6 +2,7 @@ window.onload = function() {
   this.init();
   this.initDark();
   this.initLive();
+  this.initAudio();
 };
 
 var curDate = new Date();

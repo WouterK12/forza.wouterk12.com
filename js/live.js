@@ -39,10 +39,15 @@ function UpdateText() {
       minutes = "0" + minutes;
       if (live.classList.contains("hidden")) {
         live.classList.remove("hidden");
+        short.play();
       }
     }
     if (seconds < 10) {
       seconds = "0" + seconds;
+    }
+    console.log(seconds);
+    if (seconds == 7) {
+      start.play();
     }
 
     SetText(liveT, minutes, seconds);
