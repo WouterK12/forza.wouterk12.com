@@ -11,6 +11,7 @@ function Checker(event) {
   if (!egg.startsWith(temp)) {
     temp = "";
   } else if (egg == temp) {
+    temp = "";
     turn.play();
   }
 }

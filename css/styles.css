@@ -182,6 +182,8 @@ section div:first-child {
   background: #fff;
   border-radius: 5px;
   box-shadow: 1px 1px 5px grey;
+
+  transition: opacity 1s;
 }
 .live.hidden {
   position: absolute;

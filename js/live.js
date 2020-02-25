@@ -39,11 +39,13 @@ function UpdateText() {
       minutes = "0" + minutes;
       if (live.classList.contains("hidden")) {
         live.classList.remove("hidden");
-        short.play();
       }
     }
     if (seconds < 10) {
       seconds = "0" + seconds;
+    }
+    if (minutes == 9 && seconds == 59) {
+      short.play();
     }
     if (minutes < 1 && seconds == 7) {
       start.play();
