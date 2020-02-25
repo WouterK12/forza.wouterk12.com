@@ -45,8 +45,7 @@ function UpdateText() {
     if (seconds < 10) {
       seconds = "0" + seconds;
     }
-    console.log(seconds);
-    if (seconds == 7) {
+    if (minutes < 1 && seconds == 7) {
       start.play();
     }
 
