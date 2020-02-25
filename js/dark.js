@@ -2,7 +2,7 @@ function initDark() {
   const tog = document.querySelector(".toggle");
   const body = document.querySelector("body");
 
-  if (document.cookie == "dark=true") {
+  if (localStorage.getItem("dark")) {
     tog.classList.add("on");
     body.classList.add("dark");
   }
@@ -11,11 +11,11 @@ function initDark() {
     if (tog.classList.contains("on")) {
       tog.classList.remove("on");
       body.classList.remove("dark");
-      document.cookie = "dark=false";
+      localStorage.setItem("dark", false);
     } else {
       tog.classList.add("on");
       body.classList.add("dark");
-      document.cookie = "dark=true";
+      localStorage.setItem("dark", true);
     }
   });
 }

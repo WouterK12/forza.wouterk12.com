@@ -5,7 +5,7 @@ var now = new Date();
 var nextH = new Date();
 var nextT;
 
-var liveDelay = 1000;
+var liveDelay = 0;
 
 function initLive() {
   live = document.querySelector(".live");
