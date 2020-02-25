@@ -2,7 +2,7 @@ function initDark() {
   const tog = document.querySelector(".toggle");
   const body = document.querySelector("body");
 
-  if (localStorage.getItem("dark")) {
+  if (localStorage.getItem("dark") == true) {
     tog.classList.add("on");
     body.classList.add("dark");
   }
