@@ -32,10 +32,10 @@ function UpdateText() {
     } else {
       liveDelay = 1000;
     }
-    if (minutes == 10 && seconds == 0) {
+    if (minutes < 10 && live.classList.contains("hidden")) {
       live.classList.remove("hidden");
     }
-    if (minutes == 0 && seconds == 0) {
+    if (minutes > 10 && !live.classList.contains("hidden")) {
       live.classList.add("hidden");
     }
 
