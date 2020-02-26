@@ -1,6 +1,6 @@
 window.onload = function() {
   this.init();
-  this.initDark();
+  this.initTog();
   this.initLive();
   this.initAudio();
   this.initTime();
