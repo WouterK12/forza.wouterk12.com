@@ -72,14 +72,18 @@ a:hover {
 .back {
   font-family: "Raleway", sans-serif;
 }
+.toggles,
 .toggle {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.toggles {
   position: absolute;
   top: 0;
   right: 0;
-
+}
+.toggle {
   padding: 5px;
   margin: 15px;
 
