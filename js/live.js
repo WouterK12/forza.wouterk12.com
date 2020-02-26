@@ -46,9 +46,15 @@ function UpdateText() {
     }
     if (minutes == 9 && seconds == 59) {
       short.play();
+      if (no == "true") {
+        ShowNotification("#FORZATHON LIVE starting in 10 minutes!");
+      }
     }
     if (minutes < 1 && seconds == 7) {
       start.play();
+      if (no == "true") {
+        ShowNotification("#FORZATHON LIVE starting now!");
+      }
     }
 
     SetText(liveT, minutes, seconds);

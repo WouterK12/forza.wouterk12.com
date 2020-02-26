@@ -17,6 +17,8 @@ var chSe;
 
 var delay = 0;
 
+var no = localStorage.getItem("no");
+
 const monthNames = [
   "January",
   "February",
@@ -100,6 +102,9 @@ function UpdateCount() {
     if (days < 1 && hours < 1 && minutes < 1 && seconds < 1) {
       delay = 60000;
       UpdateSeason();
+      if (no == "true") {
+        ShowNotification(curSe + " is here! Check it out!");
+      }
     }
 
     if (days < 1 && hours < 1) {
