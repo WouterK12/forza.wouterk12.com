@@ -5,6 +5,8 @@
   .live {
     height: 90px;
     width: 350px;
+
+    margin-top: 60px;
   }
   .live .logo {
     width: 90px;
@@ -30,6 +32,9 @@
   .live {
     height: 80px;
     width: 300px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   .live .logo {
     width: 80px;
@@ -84,6 +89,12 @@ a:hover {
 }
 .back {
   font-family: "Raleway", sans-serif;
+}
+.no-warn {
+  display: none;
+}
+.no-warn.no {
+  display: block;
 }
 .toggles,
 .toggle {
@@ -187,8 +198,6 @@ section div:first-child {
 .live {
   display: flex;
   z-index: 2;
-
-  margin-top: 60px;
 
   font-family: "Oswald";
   color: rgb(153, 153, 153);

@@ -1,13 +1,19 @@
+var togN;
+
 function initTog() {
   const togD = document.querySelector(".toggle.dark");
-  const togN = document.querySelector(".toggle.no");
+  togN = document.querySelector(".toggle.no");
   const body = document.querySelector("body");
+  const noText = document.querySelector(".no-warn");
 
   if (localStorage.getItem("dark") == "true") {
     togD.classList.add("on");
     body.classList.add("dark");
   }
-  if (localStorage.getItem("no") == "true") {
+  if (
+    localStorage.getItem("no") == "true" &&
+    Notification.permission === "granted"
+  ) {
     togN.classList.add("on");
   }
 
@@ -24,11 +30,37 @@ function initTog() {
   });
   togN.addEventListener("click", function() {
     if (togN.classList.contains("on")) {
-      togN.classList.remove("on");
-      localStorage.setItem("no", "false");
+      DisableNo();
     } else {
-      togN.classList.add("on");
-      localStorage.setItem("no", "true");
+      if (
+        Notification.permission === "default" ||
+        Notification.permission === "denied"
+      ) {
+        Notification.requestPermission().then(function(permission) {
+          if (permission === "granted") {
+            EnableNo();
+          } else {
+            DisableNo();
+          }
+        });
+      }
+      if (Notification.permission === "granted") {
+        EnableNo();
+      } else if (Notification.permission === "denied") {
+        noText.classList.add("no");
+      }
     }
   });
+}
+
+function EnableNo() {
+  togN.classList.add("on");
+  no = "true";
+  localStorage.setItem("no", "true");
+  ShowNotification("Notifications enabled");
+}
+function DisableNo() {
+  togN.classList.remove("on");
+  no = "false";
+  localStorage.setItem("no", "false");
 }
