@@ -19,10 +19,13 @@
   .live .info .stat {
     font-size: 16px;
   }
+  .toggles {
+    position: absolute;
+  }
 }
 @media (max-width: 500px) {
   .wrapper > .title {
-    margin-top: 60px;
+    margin-top: 30px;
   }
   .live {
     height: 80px;
@@ -42,6 +45,13 @@
   .live .info .stat {
     font-size: 14px;
   }
+  .toggles {
+    position: unset;
+    justify-content: center;
+  }
+  .back {
+    margin-bottom: 15px;
+  }
 }
 html {
   font-family: "Open Sans", sans-serif;
@@ -60,6 +70,9 @@ body.dark {
 body.dark a {
   color: #fff;
 }
+body.dark .toggle .base {
+  border: 3px solid white;
+}
 body.dark section div:first-child {
   border-bottom: 2px solid white;
 }
@@ -75,15 +88,14 @@ a:hover {
 .toggles,
 .toggle {
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .toggles {
-  position: absolute;
   top: 0;
   right: 0;
 }
 .toggle {
+  flex-direction: column;
+  align-items: center;
   padding: 5px;
   margin: 15px;
 
@@ -105,8 +117,6 @@ a:hover {
 }
 .toggle.on .base {
   background: rgb(55, 55, 55);
-
-  border: 3px solid white;
 }
 .toggle .base .nob {
   height: 20px;
