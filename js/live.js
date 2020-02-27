@@ -44,10 +44,20 @@ function UpdateText() {
     if (seconds < 10) {
       seconds = "0" + seconds;
     }
-    if (minutes == 9 && seconds == 59) {
+    if (minutes == 10 && seconds == 0) {
       short.play();
       if (no == "true") {
         ShowNotification("#FORZATHON LIVE starting in 10 minutes!");
+      }
+    }
+    if (minutes == 5 && seconds == 0) {
+      if (no == "true") {
+        ShowNotification("#FORZATHON LIVE starting in minutes!");
+      }
+    }
+    if (minutes == 1 && seconds == 0) {
+      if (no == "true") {
+        ShowNotification("#FORZATHON LIVE starting in 1 minute!");
       }
     }
     if (minutes < 1 && seconds == 7) {
