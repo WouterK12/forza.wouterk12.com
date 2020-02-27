@@ -52,7 +52,7 @@ function UpdateText() {
     }
     if (minutes == 5 && seconds == 0) {
       if (no == "true") {
-        ShowNotification("#FORZATHON LIVE starting in minutes!");
+        ShowNotification("#FORZATHON LIVE starting in 5 minutes!");
       }
     }
     if (minutes == 1 && seconds == 0) {
