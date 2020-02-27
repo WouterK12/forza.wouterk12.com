@@ -73,6 +73,7 @@ function SetDate(text, date) {
 }
 
 function UpdateSeason() {
+  curDate = new Date();
   var seGone = Math.floor(
     Math.abs((curDate - origin) / (7 * 24 * 60 * 60 * 1000))
   );
@@ -93,11 +94,22 @@ function UpdateCount() {
   setTimeout(function() {
     curDate = new Date();
     chDate = fDate - curDate;
+    console.log(chDate);
 
     var days = Math.floor(chDate / (1000 * 60 * 60 * 24));
     var hours = Math.floor((chDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((chDate % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((chDate % (1000 * 60)) / 1000);
+
+    if (days == 0 && hours == 0 && minutes == 0 && seconds == 0) {
+      delay = 60000;
+      setTimeout(function() {
+        UpdateSeason();
+        if (no == "true") {
+          ShowNotification(curSe.toUpperCase() + " is here! Check it out!");
+        }
+      }, 1000);
+    }
 
     if (minutes < 10) {
       minutes = "0" + minutes;
@@ -106,21 +118,15 @@ function UpdateCount() {
       seconds = "0" + seconds;
     }
 
-    if (days < 1 && hours < 1 && minutes < 1 && seconds < 1) {
-      delay = 60000;
-      UpdateSeason();
-      if (no == "true") {
-        ShowNotification(curSe + " is here! Check it out!");
-      }
-    }
-
     if (days < 1 && hours < 1) {
-      if (minutes < 1) {
-        delay = 1000;
-        chDateText.innerHTML = seconds + "s ";
-      }
       delay = 1000;
       chDateText.innerHTML = minutes + "m " + seconds + "s ";
+      if (minutes == 0) {
+        chDateText.innerHTML = seconds + "s ";
+        if (seconds < 1) {
+          chDateText.innerHTML = "0s ";
+        }
+      }
     } else if (days < 1) {
       delay = 60000;
       chDateText.innerHTML = hours + "h " + minutes + "m ";

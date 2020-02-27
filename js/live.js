@@ -22,7 +22,7 @@ function UpdateText() {
     nextH.setMinutes(0);
     nextH.setSeconds(0);
 
-    nextT = nextH.getTime() - now.getTime();
+    nextT = nextH - now;
 
     var minutes = Math.floor((nextT % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((nextT % (1000 * 60)) / 1000);
