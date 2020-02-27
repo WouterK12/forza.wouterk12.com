@@ -21,20 +21,14 @@
   .live .info .stat {
     font-size: 16px;
   }
-  .toggles {
-    position: absolute;
-  }
 }
 @media (max-width: 500px) {
   .wrapper > .title {
-    margin-top: 30px;
+    margin-top: 60px;
   }
   .live {
     height: 80px;
     width: 300px;
-
-    margin-top: 5px;
-    margin-bottom: 5px;
   }
   .live .logo {
     width: 80px;
@@ -50,9 +44,8 @@
   .live .info .stat {
     font-size: 14px;
   }
-  .toggles {
-    position: unset;
-    justify-content: center;
+  .toggle.no {
+    display: none;
   }
   .back {
     margin-bottom: 15px;
@@ -101,6 +94,7 @@ a:hover {
   display: flex;
 }
 .toggles {
+  position: absolute;
   top: 0;
   right: 0;
 }

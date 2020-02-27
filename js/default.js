@@ -52,6 +52,13 @@ function init() {
 
   UpdateCount();
   UpdateSeason();
+
+  if (
+    typeof window.orientation !== "undefined" ||
+    navigator.userAgent.indexOf("IEMobile") !== -1
+  ) {
+    togN.style.display = "none";
+  }
 }
 
 function SetDate(text, date) {
