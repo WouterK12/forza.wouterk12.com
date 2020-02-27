@@ -29,6 +29,8 @@
   .live {
     height: 80px;
     width: 300px;
+
+    margin-top: 60px;
   }
   .live .logo {
     width: 80px;
@@ -44,9 +46,9 @@
   .live .info .stat {
     font-size: 14px;
   }
-  .toggle.no {
+  /* .toggle.no {
     display: none;
-  }
+  } */
   .back {
     margin-bottom: 15px;
   }

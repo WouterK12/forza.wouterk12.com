@@ -94,7 +94,6 @@ function UpdateCount() {
   setTimeout(function() {
     curDate = new Date();
     chDate = fDate - curDate;
-    console.log(chDate);
 
     var days = Math.floor(chDate / (1000 * 60 * 60 * 24));
     var hours = Math.floor((chDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
