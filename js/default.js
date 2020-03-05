@@ -100,7 +100,11 @@ function UpdateCount() {
     var minutes = Math.floor((chDate % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((chDate % (1000 * 60)) / 1000);
 
-    if (days == 0 && hours == 0 && minutes == 0 && seconds == 0) {
+    if (
+      (days == 0 && hours == 0 && minutes == 0 && seconds == 0) ||
+      (minutes.toString().startsWith("0-") &&
+        seconds.toString().startsWith("0-"))
+    ) {
       delay = 60000;
       setTimeout(function() {
         UpdateSeason();
