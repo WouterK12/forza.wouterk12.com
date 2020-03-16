@@ -10,6 +10,7 @@ function Checker(event) {
   temp = temp + x.toString();
   if (!time.startsWith(temp)) {
     temp = "";
+    temp = temp + x.toString();
   } else if (time == temp) {
     temp = "";
     turn.play();
