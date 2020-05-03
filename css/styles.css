@@ -1,54 +1,4 @@
-@media (min-width: 500px) {
-  .wrapper > .title {
-    margin-top: 60px;
-  }
-  .live {
-    height: 90px;
-    width: 350px;
-
-    margin-top: 60px;
-  }
-  .live .logo {
-    width: 90px;
-  }
-  .live .logo img {
-    top: 5px;
-    left: -15px;
-  }
-  .live .info {
-    font-size: 20px;
-  }
-  .live .info .stat {
-    font-size: 16px;
-  }
-}
 @media (max-width: 500px) {
-  .wrapper > .title {
-    margin-top: 60px;
-  }
-  .live {
-    height: 80px;
-    width: 300px;
-
-    margin-top: 60px;
-  }
-  .live .logo {
-    width: 80px;
-  }
-  .live .logo img {
-    top: 8px;
-    left: -10px;
-    width: 100px;
-  }
-  .live .info {
-    font-size: 18px;
-  }
-  .live .info .stat {
-    font-size: 14px;
-  }
-  /* .toggle.no {
-    display: none;
-  } */
   .back {
     margin-bottom: 15px;
   }
@@ -97,8 +47,10 @@ a:hover {
 }
 .toggles {
   position: absolute;
-  top: 0;
+  top: 20px;
   right: 0;
+  width: 100%;
+  justify-content: center;
 }
 .toggle {
   flex-direction: column;
@@ -138,14 +90,48 @@ a:hover {
 .toggle.on .base .nob {
   transform: translateX(30px);
 }
+.toggle.audio {
+  justify-content: center;
+}
+.toggle.audio .icon {
+  height: 100%;
+  content: url(../images/audio_off_dark.svg);
+}
+.toggle.audio.on .icon {
+  content: url(../images/audio_dark.svg);
+}
+body.dark .toggle.audio .icon {
+  content: url(../images/audio_off.svg);
+}
+body.dark .toggle.audio.on .icon {
+  content: url(../images/audio.svg);
+}
+.toggle.audio span::before {
+  content: "Disabled";
+}
+.toggle.audio.on span::before {
+  content: "Enabled";
+}
+@media (min-width: 500px) {
+  .toggles {
+    top: 0;
+    width: unset;
+  }
+}
 .wrapper > .title {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 70px;
 }
 .wrapper > .title a {
   margin-left: 0.4rem;
   margin-right: 0.4rem;
+}
+@media (min-width: 500px) {
+  .wrapper > .title {
+    margin-top: 60px;
+  }
 }
 .wrapper,
 section {
@@ -194,6 +180,10 @@ section div:first-child {
 .live {
   display: flex;
   z-index: 2;
+  height: 80px;
+  width: 300px;
+
+  margin-top: 80px;
 
   font-family: "Oswald";
   color: rgb(153, 153, 153);
@@ -215,11 +205,15 @@ section div:first-child {
   color: #ff0961;
 }
 .live .logo {
+  width: 80px;
   background: linear-gradient(to right, #ff00b4, #ff0961);
   border-radius: 5px;
 }
 .live .logo img {
   position: relative;
+  top: 8px;
+  left: -10px;
+  width: 100px;
 }
 .live .info {
   display: flex;
@@ -228,6 +222,32 @@ section div:first-child {
   align-items: center;
   width: 260px;
 
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.01rem;
+}
+.live .info .stat {
+  font-size: 14px;
+}
+@media (min-width: 500px) {
+  .live {
+    height: 90px;
+    width: 350px;
+
+    margin-top: 60px;
+  }
+  .live .logo {
+    width: 90px;
+  }
+  .live .logo img {
+    top: 5px;
+    left: -15px;
+    width: unset;
+  }
+  .live .info {
+    font-size: 20px;
+  }
+  .live .info .stat {
+    font-size: 16px;
+  }
 }

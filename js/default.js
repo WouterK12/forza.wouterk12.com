@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   this.initTog();
   this.init();
   this.initLive();
@@ -17,8 +17,6 @@ var chSe;
 
 var delay = 0;
 
-var no = localStorage.getItem("no");
-
 const monthNames = [
   "January",
   "February",
@@ -31,7 +29,7 @@ const monthNames = [
   "September",
   "October",
   "November",
-  "December"
+  "December",
 ];
 const dayNames = [
   "monday",
@@ -40,7 +38,7 @@ const dayNames = [
   "thursday",
   "friday",
   "saturday",
-  "sunday"
+  "sunday",
 ];
 
 function init() {
@@ -91,7 +89,7 @@ function UpdateSeason() {
 }
 
 function UpdateCount() {
-  setTimeout(function() {
+  setTimeout(function () {
     curDate = new Date();
     chDate = fDate - curDate;
 
@@ -106,7 +104,7 @@ function UpdateCount() {
         seconds.toString().startsWith("0-"))
     ) {
       delay = 60000;
-      setTimeout(function() {
+      setTimeout(function () {
         UpdateSeason();
         if (no == "true") {
           ShowNotification(curSe.toUpperCase() + " is here! Check it out!");

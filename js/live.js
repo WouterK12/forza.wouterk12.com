@@ -15,7 +15,7 @@ function initLive() {
 }
 
 function UpdateText() {
-  setTimeout(function() {
+  setTimeout(function () {
     now = new Date();
     nextH = new Date();
     nextH.setHours(nextH.getHours() + 1);
@@ -45,7 +45,7 @@ function UpdateText() {
       seconds = "0" + seconds;
     }
     if (minutes == 10 && seconds == 0) {
-      short.play();
+      if (allowed) short.play();
       if (no == "true") {
         ShowNotification("#FORZATHON LIVE starting in 10 minutes!");
       }
@@ -61,7 +61,7 @@ function UpdateText() {
       }
     }
     if (minutes < 1 && seconds == 7) {
-      start.play();
+      if (allowed) start.play();
       if (no == "true") {
         ShowNotification("#FORZATHON LIVE starting now!");
       }

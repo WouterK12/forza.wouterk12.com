@@ -1,11 +1,17 @@
 var togN;
+var no = localStorage.getItem("no");
+var allowed = false;
 
 function initTog() {
   const togD = document.querySelector(".toggle.dark");
   togN = document.querySelector(".toggle.no");
+  const togA = document.querySelector(".toggle.audio");
   const body = document.querySelector("body");
   const noText = document.querySelector(".no-warn");
 
+  if (!localStorage.getItem("dark")) {
+    localStorage.setItem("dark", "true");
+  }
   if (localStorage.getItem("dark") == "true") {
     togD.classList.add("on");
     body.classList.add("dark");
@@ -16,8 +22,16 @@ function initTog() {
   ) {
     togN.classList.add("on");
   }
+  if (!localStorage.getItem("audio")) {
+    localStorage.setItem("audio", "true");
+    allowed = true;
+  }
+  if (localStorage.getItem("audio") == "true") {
+    togA.classList.add("on");
+    allowed = true;
+  }
 
-  togD.addEventListener("click", function() {
+  togD.addEventListener("click", function () {
     if (togD.classList.contains("on")) {
       togD.classList.remove("on");
       body.classList.remove("dark");
@@ -28,7 +42,7 @@ function initTog() {
       localStorage.setItem("dark", "true");
     }
   });
-  togN.addEventListener("click", function() {
+  togN.addEventListener("click", function () {
     if (togN.classList.contains("on")) {
       DisableNo();
     } else {
@@ -36,7 +50,7 @@ function initTog() {
         Notification.permission === "default" ||
         Notification.permission === "denied"
       ) {
-        Notification.requestPermission().then(function(permission) {
+        Notification.requestPermission().then(function (permission) {
           if (permission === "granted") {
             EnableNo();
           } else {
@@ -49,6 +63,17 @@ function initTog() {
       } else if (Notification.permission === "denied") {
         noText.classList.add("no");
       }
+    }
+  });
+  togA.addEventListener("click", function () {
+    if (togA.classList.contains("on")) {
+      togA.classList.remove("on");
+      localStorage.setItem("audio", "false");
+      allowed = false;
+    } else {
+      togA.classList.add("on");
+      localStorage.setItem("audio", "true");
+      allowed = true;
     }
   });
 }
