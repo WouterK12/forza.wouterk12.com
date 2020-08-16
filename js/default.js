@@ -32,13 +32,13 @@ const monthNames = [
   "December",
 ];
 const dayNames = [
+  "sunday",
   "monday",
   "tuesday",
   "wednesday",
   "thursday",
   "friday",
   "saturday",
-  "sunday",
 ];
 
 function init() {
@@ -61,7 +61,7 @@ function init() {
 
 function SetDate(text, date) {
   text.innerHTML =
-    dayNames[date.getDay() - 1] +
+    dayNames[date.getDay()] +
     ", " +
     date.getDate() +
     " " +
